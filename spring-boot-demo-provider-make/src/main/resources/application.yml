@@ -18,12 +18,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://106.15.230.192:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     username: root
-    password: mysql
-    #    url: jdbc:mysql://192.168.2.129:3306/dym_db?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
-    #    username: root
-    #    password: 123456
+    password: 123456
     dbcp2:
       min-idle: 5                   #最小维持连接数
       initial-size: 5               #初始化连接数
