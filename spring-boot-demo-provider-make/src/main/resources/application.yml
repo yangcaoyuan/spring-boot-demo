@@ -42,8 +42,8 @@ eureka:
     register-with-eureka: true
     enabled: true
     service-url:
-#      defaultZone: http://jixiang:jixiang2019@localhost:7001/eureka
-      defaultZone: http://eureka:7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka:7003.com:7003/eureka
+      defaultZone: http://jixiang:jixiang2019@localhost:7001/eureka
+#      defaultZone: http://eureka:7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka:7003.com:7003/eureka
     healthcheck:
       enabled: true
 
