@@ -120,6 +120,8 @@
     <module>spring-boot-demo-provider-make</module>
     <module>spring-boot-demo-consumer-make</module>
     <module>spring-boot-demo-eureka-7001</module>
+    <module>spring-boot-demo-eureka-7002</module>
+    <module>spring-boot-demo-eureka-7003</module>
   </modules>
 
 </project>

@@ -33,19 +33,28 @@ spring:
 #    sampler:
 #      probability: 1
 
-#eureka:
-#  instance:
-#    prefer-ip-address: true
-#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-#    hostname: ${spring.cloud.client.ip-address}
-#  client:
-#    register-with-eureka: true
-#    enabled: true
-#    service-url:
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+  client:
+    register-with-eureka: true
+    enabled: true
+    service-url:
 #      defaultZone: http://jixiang:jixiang2019@localhost:7001/eureka
-#    healthcheck:
-#      enabled: true
-#
+      defaultZone: http://eureka:7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka:7003.com:7003/eureka
+    healthcheck:
+      enabled: true
+
+info:
+  java:
+    version: ${java.version}
+  app.name: ${spring.application.name}
+  company.name: www.toponebuyer.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
 #management:
 #  endpoints:
 #    web:
@@ -53,14 +62,7 @@ spring:
 #        # spring-boot-starter-actuator 2.0版本以上得这么配置，将接口暴露出来，如果要暴露全部节点使用include: "*"
 #        include: refresh,health,info
 ## INFO ENDPOINT CONFIGURATION
-#info:
-#  java:
-#    version: ${java.version}
-#  app.name: ${spring.application.name}
-#  company.name: www.toponebuyer.com
-#  build.artifactId: ${project.artifactId}
-#  build.version: ${project.version}
-#
+
 #evn: dev
 #branch: master
 
