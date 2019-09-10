@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.walker.provider.dao.MakeOrderDao" >
+  <resultMap id="BaseResultMap" type="com.walker.entity.MakeOrder" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="order_code" property="orderCode" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="warehouse_id" property="warehouseId" jdbcType="VARCHAR" />
+    <result column="make_time" property="makeTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="make_code" property="makeCode" jdbcType="VARCHAR" />
+    <result column="make_num" property="makeNum" jdbcType="TINYINT" />
+    <result column="make_money" property="makeMoney" jdbcType="DECIMAL" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="order_id" property="orderId" jdbcType="VARCHAR" />
+    <result column="charge_id" property="chargeId" jdbcType="VARCHAR" />
+    <result column="channel" property="channel" jdbcType="TINYINT" />
+    <result column="pay_code" property="payCode" jdbcType="VARCHAR" />
+    <result column="pay_date" property="payDate" jdbcType="TIMESTAMP" />
+    <result column="cancel_date" property="cancelDate" jdbcType="TIMESTAMP" />
+    <result column="refund_date" property="refundDate" jdbcType="TIMESTAMP" />
+    <result column="refund_id" property="refundId" jdbcType="VARCHAR" />
+    <result column="db_source" property="dbSource" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, order_code, user_id, warehouse_id, make_time, `status`, create_time, make_code, 
+    make_num, make_money, reason, order_id, charge_id, channel, pay_code, pay_date, cancel_date, 
+    refund_date, refund_id, db_source
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from make_order
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from make_order
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.walker.entity.MakeOrder" >
+    insert into make_order (id, order_code, user_id, 
+      warehouse_id, make_time, `status`, 
+      create_time, make_code, make_num, 
+      make_money, reason, order_id, 
+      charge_id, channel, pay_code, 
+      pay_date, cancel_date, refund_date, 
+      refund_id)
+    values (#{id,jdbcType=VARCHAR}, #{orderCode,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{warehouseId,jdbcType=VARCHAR}, #{makeTime,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{makeCode,jdbcType=VARCHAR}, #{makeNum,jdbcType=TINYINT}, 
+      #{makeMoney,jdbcType=DECIMAL}, #{reason,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, 
+      #{chargeId,jdbcType=VARCHAR}, #{channel,jdbcType=TINYINT}, #{payCode,jdbcType=VARCHAR}, 
+      #{payDate,jdbcType=TIMESTAMP}, #{cancelDate,jdbcType=TIMESTAMP}, #{refundDate,jdbcType=TIMESTAMP}, 
+      #{refundId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.walker.entity.MakeOrder" >
+    insert into make_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      id,
+      order_code,
+      user_id,
+      warehouse_id,
+      make_time,
+      `status`,
+      create_time,
+      make_code,
+      make_num,
+      make_money,
+      reason,
+      order_id,
+      charge_id,
+      channel,
+      pay_code,
+      pay_date,
+      cancel_date,
+      refund_date,
+      refund_id,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{id,jdbcType=VARCHAR},
+      #{orderCode,jdbcType=VARCHAR},
+      #{userId,jdbcType=VARCHAR},
+      #{warehouseId,jdbcType=VARCHAR},
+      #{makeTime,jdbcType=TIMESTAMP},
+      #{status,jdbcType=TINYINT},
+      #{createTime,jdbcType=TIMESTAMP},
+      #{makeCode,jdbcType=VARCHAR},
+      #{makeNum,jdbcType=TINYINT},
+      #{makeMoney,jdbcType=DECIMAL},
+      #{reason,jdbcType=VARCHAR},
+      #{orderId,jdbcType=VARCHAR},
+      #{chargeId,jdbcType=VARCHAR},
+      #{channel,jdbcType=TINYINT},
+      #{payCode,jdbcType=VARCHAR},
+      #{payDate,jdbcType=TIMESTAMP},
+      #{cancelDate,jdbcType=TIMESTAMP},
+      #{refundDate,jdbcType=TIMESTAMP},
+      #{refundId,jdbcType=VARCHAR},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.walker.entity.MakeOrder" >
+    update make_order
+    <set >
+      <if test="orderCode != null" >
+        order_code = #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="warehouseId != null" >
+        warehouse_id = #{warehouseId,jdbcType=VARCHAR},
+      </if>
+      <if test="makeTime != null" >
+        make_time = #{makeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="makeCode != null" >
+        make_code = #{makeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="makeNum != null" >
+        make_num = #{makeNum,jdbcType=TINYINT},
+      </if>
+      <if test="makeMoney != null" >
+        make_money = #{makeMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeId != null" >
+        charge_id = #{chargeId,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null" >
+        channel = #{channel,jdbcType=TINYINT},
+      </if>
+      <if test="payCode != null" >
+        pay_code = #{payCode,jdbcType=VARCHAR},
+      </if>
+      <if test="payDate != null" >
+        pay_date = #{payDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cancelDate != null" >
+        cancel_date = #{cancelDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="refundDate != null" >
+        refund_date = #{refundDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="refundId != null" >
+        refund_id = #{refundId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.walker.entity.MakeOrder" >
+    update make_order
+    set order_code = #{orderCode,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      warehouse_id = #{warehouseId,jdbcType=VARCHAR},
+      make_time = #{makeTime,jdbcType=TIMESTAMP},
+      `status` = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      make_code = #{makeCode,jdbcType=VARCHAR},
+      make_num = #{makeNum,jdbcType=TINYINT},
+      make_money = #{makeMoney,jdbcType=DECIMAL},
+      reason = #{reason,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=VARCHAR},
+      charge_id = #{chargeId,jdbcType=VARCHAR},
+      channel = #{channel,jdbcType=TINYINT},
+      pay_code = #{payCode,jdbcType=VARCHAR},
+      pay_date = #{payDate,jdbcType=TIMESTAMP},
+      cancel_date = #{cancelDate,jdbcType=TIMESTAMP},
+      refund_date = #{refundDate,jdbcType=TIMESTAMP},
+      refund_id = #{refundId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+
+
+
+
+
+
+
+
+
+  <select id="selectList" resultMap="BaseResultMap">
+    select
+    id, order_code, db_source
+    from make_order
+  </select>
+
+
+</mapper>
