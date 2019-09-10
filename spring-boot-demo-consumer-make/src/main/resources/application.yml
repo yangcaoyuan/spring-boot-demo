@@ -22,3 +22,8 @@ spring:
     default-property-inclusion: non_null  # JSON返回值去除null和空字段
     serialization:
       write-dates-as-timestamps: true  # JSON返回时间为时间戳格式
+
+#自定义负载均衡策略
+spring-boot-demo-provider-make:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
