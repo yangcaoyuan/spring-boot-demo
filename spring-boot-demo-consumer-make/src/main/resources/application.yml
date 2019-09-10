@@ -26,4 +26,5 @@ spring:
 #自定义负载均衡策略
 spring-boot-demo-provider-make:
   ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule   #Ribbon核心组件IRule
+    NFLoadBalancerRuleClassName: com.walker.myrule.RandomRule_MY
