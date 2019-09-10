@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-demo-provider-make</artifactId>
-    <name>spring-boot-demo-provider-make</name>
+    <artifactId>spring-boot-demo-provider-make-8001</artifactId>
+    <name>spring-boot-demo-provider-make-8001</name>
     <description>预定服务提供者</description>
 
 

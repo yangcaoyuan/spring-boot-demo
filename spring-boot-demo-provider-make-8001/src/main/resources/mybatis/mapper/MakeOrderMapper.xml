@@ -21,11 +21,12 @@
     <result column="cancel_date" property="cancelDate" jdbcType="TIMESTAMP" />
     <result column="refund_date" property="refundDate" jdbcType="TIMESTAMP" />
     <result column="refund_id" property="refundId" jdbcType="VARCHAR" />
+    <result column="db_source" property="dbSource" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, order_code, user_id, warehouse_id, make_time, `status`, create_time, make_code, 
     make_num, make_money, reason, order_id, charge_id, channel, pay_code, pay_date, cancel_date, 
-    refund_date, refund_id
+    refund_date, refund_id, db_source
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -192,7 +193,7 @@
 
   <select id="selectList" resultMap="BaseResultMap">
     select
-    id, order_code, user_id, warehouse_id, make_time
+    id, order_code, db_source
     from make_order
   </select>
 
