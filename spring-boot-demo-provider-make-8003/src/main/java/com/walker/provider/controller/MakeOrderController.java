@@ -34,7 +34,7 @@ public class MakeOrderController {
     }
 
     @RequestMapping(value = "/make/get/{id}",method = RequestMethod.GET)
-    public MakeOrder get(@PathVariable String id) {
+    public MakeOrder get(@PathVariable(value = "id") String id) {
         return makeOrderService.select(id);
     }
 

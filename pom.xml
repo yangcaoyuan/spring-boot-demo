@@ -124,6 +124,7 @@
     <module>spring-boot-demo-eureka-7001</module>
     <module>spring-boot-demo-eureka-7002</module>
     <module>spring-boot-demo-eureka-7003</module>
+    <module>spring-boot-demo-consumer-make-feign</module>
   </modules>
 
 </project>
