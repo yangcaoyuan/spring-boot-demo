@@ -9,9 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-demo-consumer-make-feign</artifactId>
-    <name>spring-boot-demo-consumer-make-feign</name>
-    <description>预定服务消费者</description>
+    <artifactId>spring-boot-demo-consumer-hystrix-dashboard-9001</artifactId>
+    <name>spring-boot-demo-consumer-hystrix-dashboard-9001</name>
 
     <dependencies>
         <dependency>
@@ -41,10 +40,10 @@
         <!--<artifactId>spring-boot-starter-security</artifactId>-->
         <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+        <!--</dependency>-->
 
         <!-- hystrix-->
         <dependency>
@@ -58,8 +57,8 @@
         <!--</dependency>-->
 
         <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <!--hystrix-仪表盘监控-->
