@@ -17,7 +17,7 @@ eureka:
 
 spring:
   application:
-    name: spring-boot-demo-consumer-make
+    name: spring-boot-demo-consumer-make-9001
   jackson:
     default-property-inclusion: non_null  # JSON返回值去除null和空字段
     serialization:

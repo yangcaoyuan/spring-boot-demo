@@ -127,6 +127,7 @@
     <module>spring-boot-demo-consumer-make-feign</module>
     <module>spring-boot-demo-provider-make-hystrix-8001</module>
     <module>spring-boot-demo-consumer-hystrix-dashboard</module>
+    <module>spring-boot-demo-api-zuul-gateway</module>
   </modules>
 
 </project>

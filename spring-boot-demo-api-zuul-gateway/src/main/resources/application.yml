@@ -1,0 +1,41 @@
+server:
+  port: 6001
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+  client:
+    register-with-eureka: true
+    enabled: true
+    service-url:
+      #      defaultZone: http://jixiang:jixiang2019@localhost:7001/eureka
+      defaultZone: http://eureka:7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka:7003.com:7003/eureka
+    healthcheck:
+      enabled: true
+
+spring:
+  application:
+    name: spring-boot-demo-api-zuul-gateway
+
+zuul:
+  routes:
+    #    多个服务自定义的时候路由映射不能重复
+    spring-boot-demo-consumer-make-9001: /makeserver/**
+    #  忽略整个服务不对外提供访问
+  ignored-services: "*"
+  #定义统一公共前缀
+#  prefix: /walker
+
+
+info:
+  java:
+    version: ${java.version}
+  app.name: ${spring.application.name}
+  company.name: www.toponebuyer.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
+
+
