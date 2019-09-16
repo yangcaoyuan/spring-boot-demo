@@ -1,0 +1,31 @@
+server:
+  port: 5001
+
+spring:
+  application:
+    name: spring-boot-demo-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yangcaoyuan/spring-boot-demo-config
+          username: 123456@163.com
+          password: 123456
+          #超时时间
+          timeout: 5
+          #分⽀支
+          default-label: master
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+  client:
+    register-with-eureka: true
+    enabled: true
+    service-url:
+      #      defaultZone: http://jixiang:jixiang2019@localhost:7001/eureka
+      defaultZone: http://eureka:7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka:7003.com:7003/eureka
+    healthcheck:
+      enabled: true

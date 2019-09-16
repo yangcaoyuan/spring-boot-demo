@@ -128,6 +128,7 @@
     <module>spring-boot-demo-provider-make-hystrix-8001</module>
     <module>spring-boot-demo-consumer-hystrix-dashboard</module>
     <module>spring-boot-demo-api-zuul-gateway</module>
+      <module>spring-boot-demo-config-server</module>
   </modules>
 
 </project>
