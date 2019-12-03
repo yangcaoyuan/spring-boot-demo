@@ -26,7 +26,11 @@ zuul:
     #  忽略整个服务不对外提供访问
   ignored-services: "*"
   #定义统一公共前缀
-#  prefix: /walker
+  #  prefix: /walker
+  # 忽略接口不对外提供访问
+#  ignored-patterns:
+#    - /**/consumer/make/list
+
 
 
 info:
@@ -36,6 +40,5 @@ info:
   company.name: www.toponebuyer.com
   build.artifactId: ${project.artifactId}
   build.version: ${project.version}
-
 
 
