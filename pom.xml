@@ -21,7 +21,7 @@
     <spring.version.springboot>2.1.7.RELEASE</spring.version.springboot>
     <spring.version.springcloud>Greenwich.RELEASE</spring.version.springcloud>
     <pagehelper.version>1.2.10</pagehelper.version>
-    <fastjson.version>1.2.47</fastjson.version>
+    <fastjson.version>1.2.83</fastjson.version>
   </properties>
 
   <dependencyManagement>
